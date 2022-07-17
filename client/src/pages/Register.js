@@ -15,21 +15,29 @@ const Register = () => {
   const [values, setValues] = useState(initialState);
 
   // TODO global state and useNavigate
-  const { isLoading, showAlert } = useAppContext();
+  const { isLoading, showAlert, displayAlert } = useAppContext();
 
   // #region Methods
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
 
-  const handleChange = e => {
-    console.log(e.target);
+  const handleChange = evn => {
+    setValues({ ...values, [evn.target.name]: evn.target.value });
   };
 
-  const onSubmit = e => {
-    e.preventDefault();
+  const onSubmit = evn => {
+    evn.preventDefault();
 
-    console.log(e.target);
+    const { name, email, password, isMember } = values;
+
+    if (!email || !password || (!isMember && !name)) {
+      displayAlert();
+
+      return;
+    }
+
+    console.log(values);
   };
   // #endregion
 
