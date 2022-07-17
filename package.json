@@ -1,0 +1,21 @@
+{
+  "name": "jobify",
+  "version": "1.0.0",
+  "description": "Project in Action - [Jobify](https://www.jobify.live/)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/do-Va/Udemy-JohnSmilga_MERN-jobify-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/do-Va/Udemy-JohnSmilga_MERN-jobify-app/issues"
+  },
+  "homepage": "https://github.com/do-Va/Udemy-JohnSmilga_MERN-jobify-app#readme"
+}
