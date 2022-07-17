@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Logo, FormRow, Alert } from '../components';
+import { useAppContext } from '../context/appContext';
+
 import Wrapper from '../assets/wrappers/RegisterPage';
 
 const initialState = {
@@ -7,19 +9,19 @@ const initialState = {
   email: '',
   password: '',
   isMember: true,
-  showalert: false,
 };
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
 
   // TODO global state and useNavigate
+  const { isLoading, showAlert } = useAppContext();
 
+  // #region Methods
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
 
-  // #region Methods
   const handleChange = e => {
     console.log(e.target);
   };
@@ -33,11 +35,14 @@ const Register = () => {
 
   return (
     <Wrapper className="full-page">
+      {
+        // #region Form
+      }
       <form className="form" onSubmit={onSubmit}>
         <Logo />
         <h3>{values.isMember ? 'Login' : 'Register'}</h3>
 
-        {values.showalert && <Alert />}
+        {showAlert && <Alert />}
 
         {
           // #region FormRow
@@ -80,6 +85,9 @@ const Register = () => {
           </button>
         </p>
       </form>
+      {
+        // #endregion Form
+      }
     </Wrapper>
   );
 };
