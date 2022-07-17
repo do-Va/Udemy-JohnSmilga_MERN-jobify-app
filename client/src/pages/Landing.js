@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Logo } from '../components';
 
 import main from '../assets/images/main.svg';
@@ -22,7 +23,9 @@ const Landing = () => {
             coffee coloring book aesthetic blue bottle. Offal tumblr tonx enamel
             pin stumptown. Four dollar toast marfa slow-carb blog farm-to-table.
           </p>
-          <button className="btn btn-hero">Login / Register</button>
+          <Link to="/register" className="btn btn-hero">
+            Login / Register
+          </Link>
         </div>
         <img src={main} alt="job hunt" className="img main-img" />
       </div>
