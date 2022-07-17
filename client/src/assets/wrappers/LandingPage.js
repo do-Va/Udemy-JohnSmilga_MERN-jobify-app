@@ -1,10 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Wrapper = styled.main`
+  padding-bottom: 20px;
+
   nav {
     width: var(--fluid-width);
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 0 auto 40px;
     height: var(--nav-height);
     display: flex;
     align-items: center;
@@ -36,5 +38,5 @@ const Wrapper = styled.main`
       display: block;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;
